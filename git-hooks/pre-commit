@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash; C:/Program\ Files/Git/usr/bin/sh.exe
 node ./db-sync/dev-dump-db-config.js; git add .;
 RESULT=$?
 [ $RESULT -ne 0 ] && exit 1
