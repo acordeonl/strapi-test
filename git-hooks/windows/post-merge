@@ -1,0 +1,5 @@
+#!C:/Program\ Files/Git/usr/bin/sh.exe
+node ./db-sync/dev-sync-db.js;
+RESULT=$?
+[ $RESULT -ne 0 ] && exit 1
+exit 0

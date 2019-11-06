@@ -5,8 +5,14 @@ const copyFile = promisify(fs.copyFile);
 
 async function main() {
   try{
-    await copyFile('./git-hooks/post-merge' , './.git/hooks/post-merge')
-    await copyFile('./git-hooks/pre-commit' , './.git/hooks/pre-commit')
+    if(process.platform === "win32"){
+      await copyFile('./git-hooks/windows/post-merge' , './.git/hooks/post-merge')
+      await copyFile('./git-hooks/windows/pre-commit' , './.git/hooks/pre-commit')
+    }
+    else {
+      await copyFile('./git-hooks/unix/post-merge' , './.git/hooks/post-merge')
+      await copyFile('./git-hooks/unix/pre-commit' , './.git/hooks/pre-commit')
+    }
   }
   catch(err){
     console.log(err)
