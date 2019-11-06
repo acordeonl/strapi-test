@@ -8,7 +8,7 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "preinstall": "node ./db-sync/dev-sync-db; cp ./git-hooks/post-merge ./.git/hooks/post-merge; cp ./git-hooks/pre-commit ./.git/hooks/pre-commit;",
+    "preinstall": "node ./db-sync/dev-sync-db; cp ./git-hooks/post-merge ./.git/hooks/post-merge; cp ./git-hooks/pre-commit ./.git/hooks/pre-commit; git config advice.ignoredHook false;",
     "debug": "node_modules/nodemon/bin/nodemon.js --inspect=0.0.0.0:9228 develop.js",
     "buildAndDebug": "rm -rf .cache; rm -rf build; strapi build; node_modules/nodemon/bin/nodemon.js --inspect=0.0.0.0:9228 develop.js",
     "dev-dump-db-config": "node ./db-sync/dev-dump-db-config.js; git add .;",
